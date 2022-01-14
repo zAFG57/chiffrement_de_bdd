@@ -11,3 +11,15 @@ Pour commencer a sélectionner quelle mots de passe vous vouler écrir, écriver
 Puis abracadabra, tout ce que vous venez d'écrire c'est transformer en votre mots de passe.
 
 de plus, toutes vos clefs ont été changé et votre basse de donné à été chiffré de nouveau.
+
+# idée de mise a jour future:
+Dans le future, je compte ajouter une nouvelle fonctionaliter à ce programe: 
+
+pouvoir lancer des logiciels juste avec une suite de touche de frappe que l'on peut configurer à sa gise. 
+Ainsi, lorsque je veux lancer vs code, au lieux de le chercher dans ma barre des tache et clicker dessu avec ma sourri, je pourait le lancer en écrivant sur mon clavier (peut import se que j'était en train de faire) ctrl + V + S
+
+cela pourait me faire ganier du temps au quotidien et me permettre d'être plus efficase. 
+
+
+
+une autre idée de mise à jours serait de continuer a stocker la moitier des clef sur un object physique qui servirait de clef d'autentification et de stocker l'autre moitier non pas sur votre ordi mais sur un serveur distant. Cela pourrait vous permettre de pouvoir accéder a vous mots de passe depuis partout tant que vous avez la clef usb pour vous identifier.
