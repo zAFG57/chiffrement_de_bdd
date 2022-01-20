@@ -1,4 +1,5 @@
 from os import remove
+from selectors import SelectSelector
 from pynput.keyboard import Key, Listener
 from varriable import ACTIVATION_SHORTCUT , STOP_SHORTCUT
 from function import stop_programe
@@ -25,6 +26,7 @@ class key_logeur:
         if len(key_loger.code) == key_loger.nombre:
             key_loger.pas_trouver = False
             key_loger.nombre = 0
+            key_loger.code = [][:0] = key_loger.codenl
             return key_loger.pas_trouver
         elif lettre == key_loger.to_string(key_loger.la_lettre(key_loger.nombre)):
             key_loger.nombre += 1
@@ -69,6 +71,7 @@ class sélection:
             selection.remove_shortcut()
             selection.continu = False
             selection.nomber = 0
+            selection.code = [][:0] = selection.codenl
             return selection.continu
         elif letter == selection.la_lettre(selection.nomber):
             selection.nomber += 1
