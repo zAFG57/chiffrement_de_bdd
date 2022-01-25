@@ -1,4 +1,4 @@
-from key_loger import *
+from selection import *
 from crypto import *
 from function import *
 from varriable import *
@@ -13,8 +13,8 @@ class passd_secure():
         self.loop = 1
     
     def start(self):
-            key_loger.cherche()                     # attend l'activation du shortcut
-            key_loger.pas_trouver = True
+            selection.cherche()                     # attend l'activation du shortcut
+            selection.pas_trouver = True
 
             #    récupère les clef et la bdd
             key_local = key_dictionnaire(PATH_KEY_LOCAL,PATH_KEY_REMOTE)
