@@ -55,9 +55,27 @@ def verify():
         delete(PATH_HASH_ERROR + HASH_ERROR)
         return 1
 
+def made_back_up():
+    clean_the_back_up(PATH_BACKUP)
+    clean_the_back_up(PATH_BACKUP_REMOTE)
+    write_key(PATH_BACKUP_REMOTE,key_dictionnaire(PATH_KEY_REMOTE,PATH_KEY_LOCAL))
+    write_key(PATH_BACKUP,key_dictionnaire(PATH_KEY_LOCAL,PATH_KEY_REMOTE))
+    write_file(PATH_BACKUP_REMOTE + XOR_KEY, get_file(PATH_KEY_REMOTE + XOR_KEY))
+    write_file(PATH_BACKUP + XOR_KEY, get_file(PATH_KEY_LOCAL + XOR_KEY))
+    write_file(PATH_BACKUP_REMOTE + TITLE_BDD,get_file(PATH_BDD + TITLE_BDD))
 
 a = 1
-
 while a:
     hash(bdd)
     a = verify()
+made_back_up()
+delete_key(PATH_KEY_LOCAL ,key_dictionnaire(PATH_KEY_LOCAL,PATH_KEY_REMOTE))
+delete_key(PATH_KEY_REMOTE ,key_dictionnaire(PATH_KEY_REMOTE,PATH_KEY_LOCAL))
+delete(PATH_BDD + TITLE_BDD)
+delete(PATH_KEY_LOCAL + XOR_KEY)
+delete(PATH_KEY_REMOTE + XOR_KEY)
+delete(PATH_HASH_ERROR + HASH_ERROR)
+a =1
+while a:
+    hash(bdd)
+    a = verify()    
