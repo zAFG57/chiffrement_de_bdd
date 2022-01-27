@@ -49,6 +49,12 @@ class sélection:
         self.continu = True
         self.key_word = ''
 
+    def rezet_recherche(self):
+        selection.nomber = 0
+        selection.codenl = STOP_SHORTCUT
+        selection.code = [][:0] = selection.codenl
+        selection.continu = True
+        selection.key_word = ''
     def la_lettre(x,nombre):
         letter = selection.code[nombre]
         return letter
