@@ -1,7 +1,5 @@
-from distutils.command.clean import clean
 from hashlib import sha256
-from os import write
-from key_loger import *
+from selection import *
 from crypto import *
 from function import *
 from varriable import *
@@ -34,9 +32,7 @@ if sha256(data.encode()).hexdigest() == hash_agains_error:
     write_file(PATH_BACKUP_REMOTE + XOR_KEY, get_file(PATH_KEY_REMOTE + XOR_KEY))
     write_file(PATH_BACKUP + XOR_KEY, get_file(PATH_KEY_LOCAL + XOR_KEY))
     write_file(PATH_BACKUP_REMOTE + TITLE_BDD,data_encoded)
-    print("updating back up")
 else:
-    print("using back up")
     data_encoded = get_file(PATH_BACKUP_REMOTE + TITLE_BDD)
     key_local = key_dictionnaire(PATH_BACKUP,PATH_BACKUP_REMOTE)
     key_remote = key_dictionnaire(PATH_BACKUP_REMOTE,PATH_BACKUP)
