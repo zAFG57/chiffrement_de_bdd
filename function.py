@@ -1,12 +1,12 @@
 from string import ascii_letters, digits,punctuation
-from os import listdir , remove
+from os import listdir , remove , startfile
 from crypto import Crypto
 import keyboard
 import json
 import random
 import sys
 
-from varriable import KEY_EXTENTION, NOMBER_OF_KEY, XOR_KEY 
+from varriable import KEY_EXTENTION, NOMBER_OF_KEY, XOR_KEY , EXE_BDD_PATH
 
 def delete_key(location,key):
     for i in range(NOMBER_OF_KEY):
@@ -83,3 +83,12 @@ def clean_the_back_up(path):
         file.remove('remote')
     for i in file:
         delete(path + i)
+
+def get_link(key_word):
+    data = get_file(EXE_BDD_PATH)
+    data = json.loads(data)
+    link = data[key_word]
+    return link
+
+def execute_file(path):
+    startfile(path)

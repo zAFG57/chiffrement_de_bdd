@@ -10,3 +10,4 @@ HASH_ERROR = '62a11b22c62.hr34h6d8g3'
 NOMBER_OF_KEY = 10
 PATH_BACKUP = './backup/'
 PATH_BACKUP_REMOTE = './backup/remote/'
+EXE_BDD_PATH = './exebdd.json'
