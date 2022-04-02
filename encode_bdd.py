@@ -10,7 +10,7 @@ def encode_bdd():
         bdd = get_file(PATH_BDD + TITLE_BDD)
 
         def hash(data):
-            # génaire la clef qui verrify l'intégriter des donnés.
+            # génère la clef qui verrifie l'intégrité des données.
             hash_agains_error = sha256(data.encode()).hexdigest()
 
             # generate key
@@ -19,7 +19,7 @@ def encode_bdd():
             key_local = generate_key(xor_key_remote)
             key_remote = generate_key(xor_key_local)
 
-            # chiffre la basse de donné avec les clefs
+            # chiffre la base de données avec les clefs
             data_encoded = cripting_function(data,key_local)
             data_encoded = cripting_function(data_encoded,key_remote)
 
@@ -36,7 +36,7 @@ def encode_bdd():
             write_file(PATH_HASH_ERROR + HASH_ERROR , hash_agains_error)
 
         def verify():
-            # récupère le titres des clefs remote et local plus leurs contenu
+            # récupère le titre des clefs remote et local plus leurs contenus
             key_local = key_dictionnaire(PATH_KEY_LOCAL,PATH_KEY_REMOTE)
             key_remote = key_dictionnaire(PATH_KEY_REMOTE,PATH_KEY_LOCAL)
             data_encoded = get_file(PATH_BDD + TITLE_BDD)
