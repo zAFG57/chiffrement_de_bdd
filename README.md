@@ -18,7 +18,7 @@ Dans le futur, je compte ajouter une nouvelle fonctionalité à ce programme:
 Pouvoir lancer des logiciels juste avec une suite de touche de frappe que l'on peut configurer à sa guise. 
 Ainsi, lorsque je veux lancer vs code, au lieu de le chercher dans ma barre des taches et clicker dessus avec ma sourri, je pourai le lancer en écrivant sur mon clavier (peut importe ce que j'étais en train de faire) ctrl + V + S
 
-Cela pourait me faire gagnier du temps au quotidien et me permettre d'être plus efficace. 
+Cela pourait me faire gagner du temps au quotidien et me permettre d'être plus efficace. 
 
 
 
