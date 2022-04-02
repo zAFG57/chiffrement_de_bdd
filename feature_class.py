@@ -10,7 +10,7 @@ class get_password_secure():
     
     def start(self):
 
-            # récupère les clef et la bdd
+            # récupère les clefs et la bdd
             key_local = key_dictionnaire(PATH_KEY_LOCAL,PATH_KEY_REMOTE)
             key_remote = key_dictionnaire(PATH_KEY_REMOTE,PATH_KEY_LOCAL)
             data_encoded = get_file(PATH_BDD + TITLE_BDD)
@@ -18,7 +18,7 @@ class get_password_secure():
             # get the hash key to prevent error
             hash_agains_error = get_file(PATH_HASH_ERROR + HASH_ERROR)
 
-            # décriptage de la bdd
+            # décryptage de la bdd
             data = uncripting_function(data_encoded,key_remote)
             data = uncripting_function(data,key_local)
             data = purify_data(data)
@@ -40,7 +40,7 @@ class get_password_secure():
                 data = uncripting_function(data,key_local_b)
                 data = purify_data(data)
 
-            # selection du mdp
+            # sélection du mdp
             selection.rezet_recherche()
             key_word = selection.cherche().replace(' ','')
             password = get_password(data,key_word)
@@ -48,13 +48,13 @@ class get_password_secure():
             # on écrit le mdp
             écrir_le_mdp(password)
 
-            # supprime les anciènnes clef
+            # supprime les anciennes clefs
             delete_key(PATH_KEY_LOCAL ,key_local)
             delete_key(PATH_KEY_REMOTE ,key_remote)
             delete(PATH_BDD + TITLE_BDD)
             delete(PATH_HASH_ERROR + HASH_ERROR)
 
-            # génaire la clef qui verrify l'intégriter des donnés.
+            # génère la clef qui verrifie l'intégrité des données.
             hash_agains_error = sha256(data.encode()).hexdigest()
 
             # generate key
@@ -64,7 +64,7 @@ class get_password_secure():
             key_remote = generate_key(xor_key_local)
 
 
-            # chiffre la basse de donné avec les clefs
+            # chiffre la base de données avec les clefs
             data_encoded = cripting_function(data,key_local)
             data_encoded = cripting_function(data_encoded,key_remote)
 
