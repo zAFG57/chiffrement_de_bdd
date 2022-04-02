@@ -6,18 +6,18 @@ from varriable import *
 
 
 key_loger.cherche()
-#                                                    récupère le titres des clefs remote et local plus leurs contenu
+#                                                    récupère le titre des clefs remote et local plus leurs contenus
 
 key_local = key_dictionnaire(PATH_KEY_LOCAL,PATH_KEY_REMOTE)
 key_remote = key_dictionnaire(PATH_KEY_REMOTE,PATH_KEY_LOCAL)
 
 data_encoded = get_file(PATH_BDD + TITLE_BDD)
-#                                                    décriptage de la bdd
+#                                                    décryptage de la bdd
 
 data = uncripting_function(data_encoded,key_remote)
 data = uncripting_function(data,key_local)
 data = purify_data(data)
-#                                                    selection du mdp
+#                                                    sélection du mdp
 
 key_word = selection.cherche().replace(' ','')
 password = get_password(data,key_word)
@@ -25,7 +25,7 @@ password = get_password(data,key_word)
 #                                                    on écrit le mdp
 écrir_le_mdp(password)
 
-#                                                    on encripte de nouveau la bdd avec une nouvelle clef
+#                                                    on encrypte de nouveau la bdd avec une nouvelle clef
 
 delete_key(PATH_KEY_LOCAL ,key_local)
 delete_key(PATH_KEY_REMOTE ,key_remote)
