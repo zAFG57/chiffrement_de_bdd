@@ -23,3 +23,6 @@ Cela pourrait me faire gagner du temps au quotidien et me permettre d'être plus
 
 
 Une autre idée de mise à jour serait de continuer à stocker la moitié des clefs dans un objet physique (cet objet physique servirait de clef d'authentification) et à stocker l'autre moitié non pas sur votre ordi mais sur un serveur distant. Cela permettra d'accéder à vos mots de passe de partout si vous avez la clef usb pour vous identifier.
+
+
+[lien de la vidéo de démonstration](https://youtu.be/NoQB9mO2PnI) 
